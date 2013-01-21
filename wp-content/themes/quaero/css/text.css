@@ -2,13 +2,15 @@
 ----------------------------------------------------------------------------------------------------*/
 
 body {
-	font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+	font: 14px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;color:#45484e;
 }
 
 a:focus {
 	outline: 1px dotted;
 }
 
+a:link,a:visited{color:#45484e; margin:0; padding:0;}
+a:hover{color:#97bf15;}
 hr {
 	border: 0 #ccc solid;
 	border-top-width: 1px;
@@ -20,27 +22,27 @@ hr {
 ----------------------------------------------------------------------------------------------------*/
 
 h1 {
-	font-size: 25px;
+	font-size: 24px; font-weight:normal;
 }
 
 h2 {
-	font-size: 23px;
+	font-size: 23px; font-weight:normal;
 }
 
 h3 {
-	font-size: 21px;
+	font-size: 21px; font-weight:normal;
 }
 
 h4 {
-	font-size: 19px;
+	font-size: 18px; font-weight:normal;
 }
 
 h5 {
-	font-size: 17px;
+	font-size: 17px; font-weight:normal;
 }
 
 h6 {
-	font-size: 15px;
+	font-size: 15px; font-weight:normal;
 }
 
 /* `Spacing
@@ -51,7 +53,7 @@ ol {
 }
 
 ul {
-	list-style: disc;
+	list-style-type:none;
 }
 
 li {

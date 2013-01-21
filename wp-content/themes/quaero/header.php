@@ -37,28 +37,57 @@ wp_deregister_script('jquery');
    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js", false, null);
    wp_enqueue_script('jquery');
 wp_head(); ?>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.scrollTo-1.4.3.1-min.js"></script> 
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<!-- bxSlider Javascript file -->
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.bxslider.min.js" type="text/javascript"></script>
+<!-- bxSlider CSS file -->
+<link href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+  auto: true,
+  autoControls: true
+});
+});
+</script> 
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-
-		<?php $header_image = get_header_image();
-		if ( ! empty( $header_image ) ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
-		<?php endif; ?>
-		<!-- fully responsive -->
-	</header><!-- #masthead -->
-
+<div class="header">
+	<div class="main">
+      <div class="g324 inside">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" id="logo">
+                <span><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span>
+            </a>
+        </div>
+        <div class="g648 menu_share">
+        	<div class="g405 inside">
+            	<ul class="share_link">
+                    <li><a href="#"><?php _e( 'Contact us', 'twentytwelve' ); ?></a></li>
+                    <li><a href="#" class="facebook"><span>&nbsp;</span></a> <a href="#" class="twitter"><span>&nbsp;</span></a></li>
+                    <li><a href="#" class="langue four-corner-all"><?php _e( 'French', 'twentytwelve' ); ?></a> <a href="#" class="last"><?php _e( 'Translate', 'twentytwelve' ); ?></a></li>
+                </ul>
+            </div>
+            <div class="g243">
+					<?php get_search_form(); ?>
+   			</div>
+            <div class="clear">&nbsp;</div>
+			<div class="blog">
+       		  <a href="<?php echo esc_url( home_url( '/' ) ); ?>/?page_id=20">Blog</a> - <a href="<?php echo esc_url( home_url( '/' ) ); ?>/?page_id=22">Evenementiel</a>
+            </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+			<?php wp_nav_menu( array( 'container_class' => 'menu','theme_location' => 'primary','menu' =>'menutop', 'menu_class' => 'menutop' ) ); ?>
+		<div class="clear">&nbsp;</div>
+  </div>
+  <?php
+if ( is_home() ) {?>
+  <div class="central">
+  	<div class="main">
+    	<img src="<?php echo get_template_directory_uri(); ?>/images/imgcentral.png" width="982" height="295" alt="central" />
+    </div>
+  </div><!--fin central-->
+  <?php }?>
+</div> <!--fin header-->
+<div id="page" class="main">
 	<div id="main" class="wrapper">

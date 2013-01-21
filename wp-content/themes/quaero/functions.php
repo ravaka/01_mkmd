@@ -73,6 +73,8 @@ function twentytwelve_setup() {
 
 	// This theme uses a custom image size for featured images, displayed on "standard" posts.
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'actus', 242, 242, false);
+
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }
 add_action( 'after_setup_theme', 'twentytwelve_setup' );
@@ -448,3 +450,4 @@ function twentytwelve_customize_preview_js() {
 	wp_enqueue_script( 'twentytwelve-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', true );
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
+include (TEMPLATEPATH.'/functions_quaero.php');
